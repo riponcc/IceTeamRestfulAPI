@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Team</title>
+    <link rel="stylesheet" href="/style.css">  
+    
+</head>
+<body>
+    <h2>Edit Team</h2>
+
+    <form th:action="@{/team-page/update-team}" th:object="${team}" method="post">
+        <label>Team ID:</label>
+        <input type="text" th:field="*{teamId}" readonly />
+
+        <label>Team Name:</label>
+        <input type="text" th:field="*{teamName}" required />
+
+        <label>City:</label>
+        <input type="text" th:field="*{teamCity}" required />
+
+        <label>Founded Year:</label>
+        <input type="number" th:field="*{teamFounded}" required />
+
+        <label>Coach Name:</label>
+        <input type="text" th:field="*{coachName}" required />
+
+        <button type="submit">Update Team</button>
+        <a href="/team-page/home">Back to List</a>
+    </form>
+</body>
+</html>
